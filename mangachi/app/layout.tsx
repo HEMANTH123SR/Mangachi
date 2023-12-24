@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { HamBurgerMenu } from "@/components/component/nav-menu";
+import { NavBar } from "@/components/NavBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,11 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="w-full h-screen">
-          <HamBurgerMenu />
-          {children}
-        </main>
+      <body className={`${inter.className} bg-background`}>
+        <NavBar />
+        {children}
       </body>
     </html>
   );
